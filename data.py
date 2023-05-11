@@ -126,9 +126,9 @@ def getDefaultTrainTransform():
     return transforms.Compose([RandomHorizontalFlip(), RandomChannelSwap(0.5), ToTensor()])
 
 def getTrainingTestingData(path, batch_size):
-    train_path = 'espada_train.csv'
+    train_path = path + 'espada_train.csv'
     #train_path = './data/nyu2_train.csv'
-    test_path  = 'espada_test.csv'
+    test_path  = path + 'espada_test.csv'
     #test_path  = './data/nyu2_test.csv'
 
     with open(train_path, newline='') as file_csv:
