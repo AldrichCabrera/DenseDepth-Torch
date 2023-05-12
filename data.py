@@ -56,8 +56,9 @@ class depthDatasetMemory(Dataset):
 
     def __getitem__(self, idx):
         sample = self.nyu_dataset[idx]
-        image = Image.open("./"+sample[0])
-        depth = Image.open("./"+sample[1])
+        paths = "/content/gdrive/MyDrive/DenseDepth/data/"
+        image = Image.open(paths + sample[0])
+        depth = Image.open(paths + sample[1])
         sample = {"image": image, "depth": depth}
         
         if self.transform:
