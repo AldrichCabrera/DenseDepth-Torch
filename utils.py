@@ -85,9 +85,8 @@ def load_images(image_files):
     loaded_images = []
 
     for file in image_files:
-        x = np.clip(np.asarray(Image.open(file).resize((640, 480)), dtype=float)/255, 0, 1).transpose(2, 
-        #x = np.clip(np.asarray(Image.open(file).resize((320, 240)), dtype=float)/255, 0, 1).transpose(2, 
-            0, 1)
+        x = np.clip(np.asarray(Image.open(file).resize((640, 480)), dtype=float)/255, 0, 1).transpose(2, 0, 1)
+        #x = np.clip(np.asarray(Image.open(file).resize((320, 240)), dtype=float)/255, 0, 1).transpose(2, 0, 1)
         loaded_images.append(x)
 
     return np.stack(loaded_images, axis=0)
